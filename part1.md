@@ -6,11 +6,13 @@
 
 2. Do not blindly run the code. Trust but verify.
 
-3. Do not run programs against environments you do not own.
+3. All the content here is for demonstration purposes only.
 
-4. It is your fault if you do not follow the aforementioned recommendations or use the code in an unethical manner.
+4. Do not perform any activities against systems or applications without authorized consent.
 
-5. Feel free to ask questions.
+5. It is your fault if you do not follow the aforementioned recommendations or use the code in an unethical manner.
+
+6. Feel free to jump in and ask questions.
 
 ## Inspirations
 
