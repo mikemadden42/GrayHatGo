@@ -27,8 +27,14 @@ func Portscan02() error {
 	return sh.Run("go", "build", "-ldflags", ldflags, "portscan02.go")
 }
 
+// Build portscan02
+func Portscan03() error {
+	return sh.Run("go", "build", "-ldflags", ldflags, "portscan03.go")
+}
+
 // Remove project artifacts
 func Clean() {
 	sh.Rm("portscan01")
 	sh.Rm("portscan02")
+	sh.Rm("portscan03")
 }
