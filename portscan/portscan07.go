@@ -41,13 +41,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	const MAX_PORTS = 1000
+	const maxPorts = 1000
 
 	for i := 0; i < cap(ports); i++ {
 		go scan(ports, *host)
 	}
 
-	for port := 1; port < MAX_PORTS; port++ {
+	for port := 1; port < maxPorts; port++ {
 		if *debug {
 			log.Println("DEBUG: testing port", port)
 		}
