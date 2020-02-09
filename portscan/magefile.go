@@ -18,6 +18,7 @@ func Build() error {
 	mg.Deps(Portscan04)
 	mg.Deps(Portscan05)
 	mg.Deps(Portscan06)
+	mg.Deps(Portscan07)
 	return nil
 }
 
@@ -51,6 +52,11 @@ func Portscan06() error {
 	return sh.Run("go", "build", "-ldflags", ldflags, "portscan06.go")
 }
 
+// Build portscan07
+func Portscan07() error {
+	return sh.Run("go", "build", "-ldflags", ldflags, "portscan07.go")
+}
+
 // Remove project artifacts
 func Clean() {
 	sh.Rm("portscan01")
@@ -59,4 +65,5 @@ func Clean() {
 	sh.Rm("portscan04")
 	sh.Rm("portscan05")
 	sh.Rm("portscan06")
+	sh.Rm("portscan07")
 }
