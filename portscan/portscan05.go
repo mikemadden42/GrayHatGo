@@ -11,7 +11,7 @@ import (
 
 func main() {
 	host := flag.String("host", "localhost", "destination host name")
-	protocol := flag.String("proto", "tcp", "network protocol")
+	debug := flag.Bool("debug", false, "debug mode")
 
 	flag.Parse()
 	if flag.NFlag() == 0 {
@@ -22,7 +22,10 @@ func main() {
 	const MAX_PORTS = 4096
 
 	for port := 1; port < MAX_PORTS; port++ {
-		conn, err := net.Dial(*protocol, *host+":"+strconv.Itoa(port))
+		if *debug {
+			log.Println("DEBUG: testing port", port)
+		}
+		conn, err := net.Dial("tcp", *host+":"+strconv.Itoa(port))
 		if err == nil {
 			fmt.Println("local address:", conn.LocalAddr())
 			fmt.Println("remote address:", conn.RemoteAddr())
