@@ -10,14 +10,14 @@ import (
 	"strconv"
 )
 
-func scan(ports, results chan int, host string) {
+func scan(ports, results chan int, host string, debug bool) {
 	for p := range ports {
-
 		conn, err := net.Dial("tcp", host+":"+strconv.Itoa(p))
 		if err == nil {
-			fmt.Println("local address:", conn.LocalAddr())
-			fmt.Println("remote address:", conn.RemoteAddr())
-			fmt.Println()
+			if debug {
+				log.Println("local address:", conn.LocalAddr())
+				log.Println("remote address:", conn.RemoteAddr())
+			}
 
 			err = conn.Close()
 			if err != nil {
@@ -26,7 +26,7 @@ func scan(ports, results chan int, host string) {
 			results <- p
 		} else {
 			results <- 0
-
+			continue
 		}
 	}
 }
@@ -34,7 +34,7 @@ func scan(ports, results chan int, host string) {
 func main() {
 	host := flag.String("host", "localhost", "destination host name")
 	debug := flag.Bool("debug", false, "debug mode")
-	ports := make(chan int, 10)
+	ports := make(chan int, 100)
 	results := make(chan int)
 	var openports []int
 
@@ -44,14 +44,14 @@ func main() {
 		os.Exit(1)
 	}
 
-	const maxPorts = 100
+	const maxPorts = 1000
 
 	for i := 0; i < cap(ports); i++ {
-		go scan(ports, results, *host)
+		go scan(ports, results, *host, *debug)
 	}
 
 	go func() {
-		for port := 1; port < maxPorts; port++ {
+		for port := 1; port <= maxPorts; port++ {
 			if *debug {
 				log.Println("DEBUG: testing port", port)
 			}
@@ -68,7 +68,6 @@ func main() {
 
 	close(ports)
 	close(results)
-
 	sort.Ints(openports)
 	for _, port := range openports {
 		fmt.Printf("%d open\n", port)
