@@ -65,12 +65,9 @@ func Portscan08() error {
 
 // Remove project artifacts
 func Clean() {
-	sh.Rm("portscan01")
-	sh.Rm("portscan02")
-	sh.Rm("portscan03")
-	sh.Rm("portscan04")
-	sh.Rm("portscan05")
-	sh.Rm("portscan06")
-	sh.Rm("portscan07")
-	sh.Rm("portscan08")
+	projects := []string{"portscan01", "portscan02", "portscan03", "portscan04", "portscan05", "portscan06", "portscan07", "portscan08"}
+
+	for _, project := range projects {
+		sh.Rm(project)
+	}
 }
