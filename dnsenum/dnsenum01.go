@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	ips, err := net.LookupIP("www.google.com")
+	ips, err := net.LookupIP("microsoft.com")
 	if err != nil {
 		log.Fatalln(err)
 	}
