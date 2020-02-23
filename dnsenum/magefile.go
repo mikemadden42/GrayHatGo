@@ -14,6 +14,7 @@ func Build() error {
 	mg.Deps(Clean)
 	mg.Deps(DnsEnum01)
 	mg.Deps(DnsEnum02)
+	mg.Deps(DnsEnum03)
 	return nil
 }
 
@@ -27,9 +28,14 @@ func DnsEnum02() error {
 	return sh.Run("go", "build", "-ldflags", ldflags, "dnsenum02.go")
 }
 
+// Build dnsenum03
+func DnsEnum03() error {
+	return sh.Run("go", "build", "-ldflags", ldflags, "dnsenum03.go")
+}
+
 // Remove project artifacts
 func Clean() {
-	projects := []string{"dnsenum01", "dnsenum02"}
+	projects := []string{"dnsenum01", "dnsenum02", "dnsenum03"}
 
 	for _, project := range projects {
 		sh.Rm(project)
