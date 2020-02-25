@@ -13,6 +13,7 @@ func main() {
 	// The list of domains was fetched from https://github.com/bitquark/dnspop.
 	subs := subdomains("subdomains.txt")
 	domain := flag.String("domain", "microsoft.com", "destination domain name")
+	debug := flag.Bool("debug", false, "debug mode")
 
 	flag.Parse()
 	if flag.NFlag() == 0 {
@@ -20,7 +21,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	resolve(*domain, subs)
+	resolve(*domain, subs, *debug)
 }
 
 func subdomains(file string) []string {
@@ -38,15 +39,17 @@ func subdomains(file string) []string {
 	return subs
 }
 
-func resolve(host string, subs []string) {
+func resolve(host string, subs []string, debug bool) {
 	for _, sub := range subs {
 		ips, err := net.LookupIP(sub + "." + host)
 		if err == nil {
 			fmt.Println(sub + "." + host)
-			for _, ip := range ips {
-				fmt.Println(ip)
+			if debug {
+				for _, ip := range ips {
+					fmt.Println(ip)
+				}
+				fmt.Println()
 			}
-			fmt.Println()
 		}
 	}
 }
