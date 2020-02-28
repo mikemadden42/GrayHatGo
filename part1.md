@@ -34,9 +34,13 @@
 
 5. Is is easy to cross-complile Go programs.
 
-6. Go has a rich standard library.
+6. Go has a decent standard library.
 
-7. Go programs are easily distributed since Go programs are built into a static binary.
+7. Go programs are easily distributed since Go programs get built into a static binary.
+
+8. Go tends to be pragmatic.
+
+9. Go complile times are short.
 
 ## Why Go may not be great for security focused tasks
 
@@ -45,3 +49,7 @@
 2. Go is more verbose, less compact compared to languages like Python, Ruby.
 
 3. Go is still a relatively new language (2009).
+
+4. Go's package management took a while to reach prime time.
+
+5. Something like tinygo may be better for embedded systems.
