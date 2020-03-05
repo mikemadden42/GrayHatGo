@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	host := flag.String("host", "localhost", "destination host name")
+	host := flag.String("host", "scanme.nmap.org", "destination host name")
 	port := flag.Int("port", 80, "destination port")
 
 	flag.Parse()

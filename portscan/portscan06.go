@@ -28,7 +28,7 @@ func scan(host string, port int) {
 }
 
 func main() {
-	host := flag.String("host", "localhost", "destination host name")
+	host := flag.String("host", "scanme.nmap.org", "destination host name")
 	debug := flag.Bool("debug", false, "debug mode")
 
 	flag.Parse()

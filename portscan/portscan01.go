@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	_, err := net.Dial("tcp", "localhost:8080")
+	_, err := net.Dial("tcp", "scanme.nmap.org:80")
 
 	if err != nil {
 		fmt.Println(err)
