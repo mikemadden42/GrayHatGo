@@ -20,7 +20,7 @@
 
 2. Black Hat Go - <https://nostarch.com/blackhatgo>
 
-## Why Go is a good fit for writing security tools
+## Why Go is a good fit for writing security tools - chapter introduction in BHG
 
 1. Go is simple, user-friendly, compared to other statically typed languages.
 
@@ -40,7 +40,7 @@
 
 9. Go complile times are short.
 
-## Why other languages may be better for writing security tools
+## Why other languages may be better for writing security tools - chapter introduction in BHG
 
 1. Go binaries are huge compared to binaries for C/C++.
 
@@ -70,7 +70,7 @@
 
 7. Reporting - document result of penetration test and possibly provide recommended corrections
 
-## Developing a DNS enumeration tool
+## Developing a DNS enumeration tool - chapter 1 in BHG
 
 1. Modeled after nmap - <https://nmap.org/>
 
@@ -103,7 +103,7 @@ $ ./portscan08 -host scanme.nmap.org
 80 open
 ```
 
-## Developing a TCP scanning tool
+## Developing a TCP scanning tool - chapter 5 in BHG
 
 1. Modeled after amass - <https://owasp.org/www-project-amass/>
 
