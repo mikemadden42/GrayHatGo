@@ -97,6 +97,12 @@ PORT    STATE    SERVICE
 593/tcp filtered http-rpc-epmap
 ```
 
+```bash
+$ ./portscan08 -host scanme.nmap.org
+22 open
+80 open
+```
+
 ## Developing a TCP scanning tool
 
 1. Modeled after amass - <https://owasp.org/www-project-amass/>
@@ -112,4 +118,24 @@ $ amass enum --passive -d microsoft.com
 OWASP Amass v3.1.10                               https://github.com/OWASP/Amass
 --------------------------------------------------------------------------------
 34817 names discovered - api: 18320, scrape: 227, cert: 16270
+```
+
+```bash
+$ ./dnsenum05 -domain microsoft.com                                                                                                                                                                                            master +
+www.microsoft.com
+mail.microsoft.com
+remote.microsoft.com
+smtp.microsoft.com
+m.microsoft.com
+shop.microsoft.com
+ftp.microsoft.com
+mail2.microsoft.com
+test.microsoft.com
+portal.microsoft.com
+support.microsoft.com
+dev.microsoft.com
+bbs.microsoft.com
+email.microsoft.com
+...
+...
 ```
