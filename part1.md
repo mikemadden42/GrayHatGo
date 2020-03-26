@@ -70,7 +70,7 @@
 
 7. Reporting - document result of penetration test and possibly provide recommended corrections
 
-## Developing a DNS enumeration tool - chapter 1 in BHG
+## Developing a TCP scanning tool - chapter 5 in BHG
 
 1. Modeled after nmap - <https://nmap.org/>
 
@@ -103,7 +103,7 @@ $ ./portscan08 -host scanme.nmap.org
 80 open
 ```
 
-## Developing a TCP scanning tool - chapter 5 in BHG
+## Developing a DNS enumeration tool - chapter 1 in BHG
 
 1. Modeled after amass - <https://owasp.org/www-project-amass/>
 
@@ -139,3 +139,11 @@ email.microsoft.com
 ...
 ...
 ```
+
+## Future Investigation
+
+1. Look at Go bindings for nmap - <https://github.com/Ullaakut/nmap>
+
+2. Continue to learn Go concepts (goroutines, channels, workgroups)
+
+3. Continue to optimize implementations
