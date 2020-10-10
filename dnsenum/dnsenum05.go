@@ -7,10 +7,7 @@ import (
 	"log"
 	"net"
 	"os"
-	"sync"
 )
-
-var wg sync.WaitGroup
 
 func main() {
 	// The list of domains was fetched from https://github.com/bitquark/dnspop.
